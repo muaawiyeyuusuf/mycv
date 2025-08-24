@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #4ade80, #3b82f6, #6366f1);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textShine 5s ease-in-out infinite alternate;
+      }
+
+      @keyframes textShine {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .contact-card {
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        transform: perspective(1000px) rotateX(0) rotateY(0) scale(1);
+      }
+
+      .contact-card:hover {
+        transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .form-input {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+      }
+
+      .submit-btn {
+        background: linear-gradient(90deg, #4ade80, #3b82f6);
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+      }
+
+      .whatsapp-btn {
+        background: linear-gradient(90deg, #25d366, #128c7e);
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5);
+      }
+
+      .back-btn {
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="contact-card rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
+    >
+      <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-6 text-center">
+        <h2 class="text-3xl font-bold">
+          Get In <span class="text-gradient">Touch</span>
+        </h2>
+        <p class="text-slate-400 mt-2">
+          Send me a message directly to my WhatsApp
+        </p>
+      </div>
+
+      <form id="contactForm" class="p-6 space-y-6">
+        <div class="space-y-2">
+          <label for="name" class="block text-slate-300">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            required
+            class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label for="email" class="block text-slate-300">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label for="message" class="block text-slate-300">Your Message</label>
+          <textarea
+            id="message"
+            required
+            rows="4"
+            class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
+          ></textarea>
+        </div>
+
+        <div class="pt-4">
+          <button
+            type="submit"
+            class="submit-btn w-full py-3 rounded-lg font-semibold text-white"
+          >
+            Send via WhatsApp
+          </button>
+        </div>
+      </form>
+
+      <div class="px-6 pb-6 flex justify-between items-center">
+        <a
+          href="test.html"
+          class="back-btn text-slate-400 hover:text-white flex items-center"
+        >
+          <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+        </a>
+
+        <a
+          href="https://wa.me/252617392380"
+          target="_blank"
+          class="whatsapp-btn flex items-center px-4 py-2 rounded-lg text-white"
+        >
+          <i class="fab fa-whatsapp mr-2"></i> Message Directly
+        </a>
+      </div>
+
+      <div class="bg-slate-800/50 p-4 text-center text-slate-500 text-sm">
+        <p>© 2025 Muaawiya Yusuf. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          // Format the message for WhatsApp
+          const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+          // Create WhatsApp link (replace with your WhatsApp number)
+          const whatsappURL = `https://wa.me/252617392380?text=${whatsappMessage}`;
+
+          // Open WhatsApp in a new tab
+          window.open(whatsappURL, "_blank");
+
+          // Reset the form
+          document.getElementById("contactForm").reset();
+        });
+    </script>
+  </body>
+</html>
